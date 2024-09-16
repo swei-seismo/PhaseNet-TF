@@ -1,0 +1,12 @@
+_target_: src.data.tsindex_datamodule.TSIndexDataModule
+
+inference_requirement_path: ???
+inference_output_dir: ???
+tsindex_database_path: ???
+datapath_name_replace: null
+
+continuous_window_time_in_sec: 3600
+window_length_in_npts: 4800
+hop_length_in_npts: 2400
+
+num_workers: 4

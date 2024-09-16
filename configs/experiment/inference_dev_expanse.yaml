@@ -1,0 +1,25 @@
+# @package _global_
+
+# dev config for inference, all files are stored in local directory
+defaults:
+  - override /trainer: single_gpu.yaml
+  - override /logger: csv.yaml
+
+data:
+  inference_requirement_path: /home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/one_month_bench.csv
+  inference_output_dir: /expanse/lustre/projects/mit186/xiziyi/inference/test
+  tsindex_database_path: /expanse/lustre/scratch/xiziyi/temp_project/tongaml_continious_response_removed.sqlite
+  datapath_name_replace: ["/mnt/gs21/scratch/xiziyi/dataset", "/expanse/lustre/scratch/xiziyi/temp_project"]
+
+callbacks:
+  batch_inference_writer:
+    output_dir: /expanse/lustre/projects/mit186/xiziyi/inference/test
+    save_prediction_stream: True
+    save_waveform_stream: True
+    save_phase_arrivals: True
+
+# trainer:
+#   devices: [0]
+#   max_epochs: 1
+
+ckpt_path: /home/xiziyi/Packages_Research/PhaseNet-TF/models/model.ckpt

@@ -1,0 +1,38 @@
+_target_: src.models.core_module.PhaseNetTFModule
+
+net:
+  _target_: src.models.components.deeplabv3p.DeepLabV3Plus
+  out_channels: 4
+  image_height: 64
+
+sgram_generator_config:
+  n_fft: 256
+  hop_length: 4
+  freqmin: 0
+  freqmax: 10
+  dt_s: 0.025
+  height: 64
+  width: 4800
+  max_clamp: 3000
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: True
+  lr: 0.0004
+  weight_decay: 0.001
+  amsgrad: False
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.MultiStepLR
+  _partial_: True
+  milestones: [15, 30, 45, 60]
+  gamma: 0.6
+
+loss: "kl_div"
+phases: ["P", "S", "PS"]
+output_classes_weight: [0.40, 0.10, 0.50, 0.0]
+extract_peaks_sensitive_possibility: [0.5, 0.5, 0.3]
+extract_peaks_sensitive_distances_in_seconds: 5.0
+window_length_in_npts: 4800
+dt_s: 0.025
+metrics_true_positive_threshold_s_list: [0.5, 1.0, 1.5]

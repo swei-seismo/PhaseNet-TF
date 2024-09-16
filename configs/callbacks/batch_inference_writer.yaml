@@ -1,0 +1,8 @@
+batch_inference_writer:
+  _target_: src.models.callbacks.batch_inference_writer.InferenceWriter
+  output_dir: ???
+  extract_phases: ["P", "S"]
+  dt_s: 0.025
+  save_prediction_stream: False
+  save_waveform_stream: False
+  save_phase_arrivals: True

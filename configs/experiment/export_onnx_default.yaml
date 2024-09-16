@@ -1,0 +1,4 @@
+# @package _global_
+
+ckpt_path: /Users/ziyixi/Library/CloudStorage/OneDrive-MichiganStateUniversity/Packages_Research/PhaseNet-TF/models/model_ps_v1.ckpt
+onnx_path: /Users/ziyixi/Library/CloudStorage/OneDrive-MichiganStateUniversity/Packages_Research/PhaseNet-TF/models/model_ps_v1.onnx

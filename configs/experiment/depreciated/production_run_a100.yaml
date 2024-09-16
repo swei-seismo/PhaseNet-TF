@@ -1,0 +1,31 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /trainer: multiple_gpu.yaml
+  - override /logger: wandb.yaml
+  - override /hydra: slurm_2n8g_v100.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["production", "2node", "wandb"]
+
+seed: 3407
+
+callbacks:
+  visualize:
+    if_log_train: true
+    if_log_val: true
+    if_log_test: true
+    log_every_n_epoch: 10
+
+logger:
+  wandb:
+    project: "PhaseNet-TF"
+
+hydra:
+  launcher:
+    gres: gpu:a100:4

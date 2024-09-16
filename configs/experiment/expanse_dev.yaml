@@ -1,0 +1,30 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /trainer: single_gpu.yaml
+  - override /logger: wandb.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["dev", "wandb"]
+
+seed: 3407
+
+trainer:
+  devices: [0,1,2,3]
+  max_epochs: 1
+
+callbacks:
+  visualize:
+    if_log_train: false
+    if_log_val: false
+    if_log_test: false
+    log_every_n_epoch: 1
+
+logger:
+  wandb:
+    project: "PhaseNet-TF-Test"

@@ -1,0 +1,17 @@
+_target_: src.data.ai4eps_datamodule.Ai4epsDataModule
+# data dir and split params
+data_dir: ${paths.data_dir}
+train_val_test_split_ratio: [0.90, 0.05, 0.05]
+train_val_test_split_seed: 3407
+# dataset params
+noise_replace_ratio: 0.3
+label_shape: "gaussian"
+label_width_in_npts: 120
+window_length_in_npts: 4800
+phases: ["P", "S", "PS"]
+first_arrival_index_in_final_window_if_no_shift: 400
+random_stack_two_waveforms_ratio: 0.7
+# data loader params
+batch_size: 32
+num_workers: 5
+pin_memory: True

@@ -1,0 +1,17 @@
+visualize:
+  _target_: src.models.callbacks.visualize.VisualizeCallback
+  phases: # the phases to be predicted
+    - "P"
+    - "S"
+    - "PS"
+  dt_s: 0.025 # the sampling distance (s) of the input data
+  window_length_in_npts: 4800 # the length of the input data
+  freqmin: 0.0 # the minimum frequency of the wave to plot
+  freqmax: 10.0 # the maximum frequency of the wave to plot
+  sgram_threshold: 10 # the threshold of the spectrogram
+  plot_waveform_based_on: "P" # the phase to plot the waveform
+  if_log_train: false # whether to log the training figures
+  if_log_val: false # whether to log the validation figures
+  if_log_test: false # whether to log the test figures
+  log_every_n_epoch: 10 # log the figures every n epochs
+  show_number_of_examples: 10 # the number of examples to show

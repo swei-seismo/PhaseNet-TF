@@ -1,0 +1,14 @@
+defaults:
+  - default.yaml
+
+launcher:
+  timeout_min: 1440
+  nodes: 1
+  tasks_per_node: 4
+  cpus_per_task: 10
+  mem_gb: 300
+  partition: gpu
+  account: mit186
+  additional_parameters:
+    gpus: 4
+    constraint: lustre

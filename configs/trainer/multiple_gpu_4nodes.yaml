@@ -1,0 +1,9 @@
+defaults:
+  - default.yaml
+
+accelerator: gpu
+devices: 4
+num_nodes: 4
+strategy: "ddp_find_unused_parameters_false"
+
+max_epochs: 140

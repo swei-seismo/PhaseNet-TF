@@ -1,0 +1,27 @@
+# @package _global_
+
+# dev config for inference, all files are stored in local directory
+defaults:
+  - override /trainer: single_gpu.yaml
+  - override /logger: csv.yaml
+  - override /hydra: inference_1n4g_a100.yaml
+
+data:
+  inference_requirement_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/train_benchmark.csv
+  inference_output_dir: /mnt/scratch/xiziyi/inference/new_20230509/train_bench_0_1
+  tsindex_database_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/dataset_continious/tongaml_continious_response_removed.sqlite
+
+callbacks:
+  batch_inference_writer:
+    output_dir: /mnt/scratch/xiziyi/inference/new_20230509/train_bench_0_1
+    save_prediction_stream: True
+    save_waveform_stream: True
+    save_phase_arrivals: True
+  batch_inference_step:
+    extract_phase_sensitivity: [0.1, 0.1]
+
+trainer:
+  devices: 4
+  max_epochs: 1
+
+ckpt_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/models/model.ckpt

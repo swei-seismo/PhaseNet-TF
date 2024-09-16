@@ -1,0 +1,4 @@
+defaults:
+  - batch_inference_step.yaml
+  - batch_inference_writer.yaml
+  - _self_

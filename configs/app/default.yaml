@@ -1,0 +1,8 @@
+# the host address of the application
+host: 0.0.0.0
+
+# the port to run the application on
+port: 8080
+
+# the step length of the sliding window in number of samples
+hop_length_in_npts: 2400

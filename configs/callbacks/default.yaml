@@ -1,0 +1,24 @@
+defaults:
+  - model_checkpoint.yaml
+  - early_stopping.yaml
+  - model_summary.yaml
+  # - rich_progress_bar.yaml
+  - learning_rate_monitor.yaml
+  - visualize.yaml
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/checkpoints
+  filename: "{epoch:02d}-{loss_val:.2f}"
+  monitor: "loss_val"
+  mode: "min"
+  save_top_k: 1
+
+early_stopping:
+  monitor: "loss_val"
+  patience: 30
+  mode: "min"
+  check_finite: False
+
+model_summary:
+  max_depth: 2

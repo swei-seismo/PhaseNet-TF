@@ -1,0 +1,23 @@
+# @package _global_
+
+# dev config for inference, all files are stored in local directory
+defaults:
+  - override /trainer: single_gpu.yaml
+  - override /logger: csv.yaml
+
+data:
+  inference_requirement_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/mantle_wedge_examples/13877.csv
+  inference_output_dir: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/mantle_wedge_examples_result/13877
+  tsindex_database_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/dataset_continious/tongaml_continious_response_removed.sqlite
+
+callbacks:
+  batch_inference_writer:
+    output_dir: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/batch_inference/mantle_wedge_examples_result/13877
+    save_prediction_stream: True
+    save_waveform_stream: True
+    save_phase_arrivals: True
+
+trainer:
+  devices: [3]
+
+ckpt_path: /mnt/home/xiziyi/Packages_Research/PhaseNet-TF/models/model.ckpt

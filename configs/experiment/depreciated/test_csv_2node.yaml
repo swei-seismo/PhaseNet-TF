@@ -1,0 +1,16 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /trainer: multiple_gpu.yaml
+  - override /logger: csv.yaml
+  - override /hydra: slurm_2n8g_v100.yaml
+
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["dev", "2node"]
+
+seed: 3407

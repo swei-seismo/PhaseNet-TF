@@ -2,7 +2,7 @@
 
 PhaseNet-TF: An advanced seismic phase detection tool via deep neural networks in the time-frequency domain, leveraging cutting-edge image segmentation approaches
 
-# Documentation
+# User guide
 
 Please refer to the [Wiki page](https://github.com/swei-seismo/PhaseNet-TF/wiki).
 

@@ -2,7 +2,8 @@
 visualize.py: Lightning callback for visualizing the model's predictions
 """
 from typing import Dict, List, Optional, Tuple
-
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import torch

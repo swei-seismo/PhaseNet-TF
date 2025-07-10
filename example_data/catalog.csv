@@ -1,0 +1,3 @@
+event_id,time,latitude,longitude,depth_km,magnitude,magnitude_type,source
+11_52111,2009-12-02 01:14:28.278360,-21.4486,-175.0123,59.8167,-1.0,mb,ISC
+11_52113,2009-12-02 02:25:13.607840,-21.0021,-176.0597,189.5062,-1.0,mb,ISC

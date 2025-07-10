@@ -29,6 +29,7 @@ segmentation-models-pytorch = "^0.3.3"
 sqlalchemy = "<2.0"
 torch = "^2.4.0"
 wandb = "^0.17.5"
+regex = "^2024.11.6"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"

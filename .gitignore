@@ -129,11 +129,10 @@ dmypy.json
 .pyre/
 
 # poetry
-# poetry.lock
+poetry.lock
 
 # dataset
-dataset/
-dataset
+# dataset/
 
 # workplace, tests that should not be committed
 workplace/
@@ -150,6 +149,6 @@ models/*
 
 # batch inference requirements
 batch_inference/
-dataset*
+#dataset*
 dumps/
 dumps.tar.gz

@@ -1,0 +1,3 @@
+begin_time,depth_km,end_time,event_id,event_time,event_time_index,latitude,longitude,magnitude,magnitude_type,source
+,12.3,,0192rlih4z,2019-03-01T22:28:53.790000Z,-1,55.8162,-148.868,2.4,,ACE
+,29.9,,018d52b681,2018-10-13T04:38:17.568000Z,-1,58.7116,-152.0294,1.9,,ACE

@@ -1,0 +1,4 @@
+Earthquake number: 1163
+Time range: 2018-05-01 04:06:12.598310 - 2019-12-26 18:57:23.517690
+Spatial range: (min_latitude, max_latitude, min_longitude, max_longitude) = (50, 60, -164, -148)
+Magnitude range: (1.9, 2.4)

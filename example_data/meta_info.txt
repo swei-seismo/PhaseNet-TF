@@ -1,4 +1,0 @@
-Earthquake number: 1163
-Time range: 2009-12-01 04:06:12.598310 - 2010-10-26 18:57:23.517690
-Spatial range: (min_latitude, max_latitude, min_longitude, max_longitude) = (-25.9401 -11.4414, 178.3124 188.6889)
-Magnitude range: (2.4 5.9)

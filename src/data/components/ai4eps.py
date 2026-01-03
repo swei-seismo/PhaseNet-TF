@@ -60,14 +60,29 @@ class Ai4epsDataset(Dataset):
         # index_to_waveform_id is a list of tuples, each tuple is (event_id, station_id)
         # eg. [("11_52111", "A01"), ("11_52111", "A02"), ...]
         self.index_to_waveform_id = index_to_waveform_id
+        # Cache size limit to reduce memory usage (LRU cache)
+        self._max_cache_size = 15
 
     def get_handler(self, event_id) -> h5py.File:
         """
         Returns:
             h5py.File: the handler of the hdf5 file
         """
-        if event_id not in self._handler:
-            self._handler[event_id] = h5py.File(self.h5py_dir / (event_id + ".h5"), "r")
+        # If already cached, move to end (most recently used)
+        if event_id in self._handler:
+            # Move to end for LRU
+            handler = self._handler.pop(event_id)
+            self._handler[event_id] = handler
+            return handler
+        
+        # If cache is full, remove least recently used (first item)
+        if len(self._handler) >= self._max_cache_size:
+            oldest_event_id = next(iter(self._handler))
+            oldest_handler = self._handler.pop(oldest_event_id)
+            oldest_handler.close()
+        
+        # Open and cache new file
+        self._handler[event_id] = h5py.File(self.h5py_dir / (event_id + ".h5"), "r")
         return self._handler[event_id]
 
     def __len__(self) -> int:

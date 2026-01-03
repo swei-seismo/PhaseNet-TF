@@ -1,10 +1,11 @@
 [tool.poetry]
-authors = ["ziyi xi <ziyixi@mail.ustc.edu.cn>"]
+authors = ["Ziyi Xi <ziyixi@mail.ustc.edu.cn>， Yaqi Jie <jieyaqi@msu.edu>"]
 description = "PhaseNet-TF: Advanced Seismic Arrival Time Detection via Deep Neural Networks in the Spectrogram Domain, Leveraging Cutting-Edge Image Segmentation Approaches"
 license = "MIT"
 name = "phasenet-tf"
 readme = "README.md"
 version = "0.2.0"
+package-mode = false
 
 [tool.poetry.dependencies]
 h5py = "^3.11.0"
@@ -27,7 +28,7 @@ rich = "^13.7.1"
 scipy = "^1.14.0"
 segmentation-models-pytorch = "^0.3.3"
 sqlalchemy = "<2.0"
-torch = "^2.4.0"
+torch = "<2.6.0"
 wandb = "^0.17.5"
 regex = "^2024.11.6"
 
